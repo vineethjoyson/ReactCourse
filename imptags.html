@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Important HTML Tags</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+      }
+      section {
+        margin-bottom: 40px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+      h2 {
+        color: #007acc;
+      }
+      code {
+        background: #eee;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      input,
+      textarea,
+      select,
+      button {
+        margin-top: 5px;
+        padding: 8px;
+        width: 250px;
+        max-width: 100%;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      input,
+      textarea,
+      select,
+      button,
+      progress,
+      meter {
+        display: block;
+        margin-top: 5px;
+        padding: 8px;
+        width: 300px;
+        max-width: 100%;
+      }
+      fieldset {
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+      legend {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌐 Important HTML Tags - Demo & Explanation</h1>
+
+    <!-- Heading Tag -->
+    <section>
+      <h2>&lt;h1&gt; to &lt;h6&gt; - Headings</h2>
+      <p>Used to create titles and headings.</p>
+      <h1>h1 - Main Title</h1>
+      <h2>h2 - Section</h2>
+      <h3>h3 - Subsection</h3>
+    </section>
+
+    <!-- Paragraph and Break -->
+    <section>
+      <h2>&lt;p&gt; and &lt;br&gt; - Paragraph and Line Break</h2>
+      <p>This is a paragraph.</p>
+      <p>Line 1<br />Line 2 (after line break)</p>
+    </section>
+
+    <!-- Text Formatting -->
+    <section>
+      <h2>Text Formatting Tags</h2>
+      <p><b>&lt;b&gt;</b> - <b>Bold text</b></p>
+      <p><i>&lt;i&gt;</i> - <i>Italic text</i></p>
+      <p><u>&lt;u&gt;</u> - <u>Underlined text</u></p>
+      <p><mark>&lt;mark&gt;</mark> - <mark>Highlighted text</mark></p>
+    </section>
+
+    <!-- Image Tag -->
+    <section>
+      <h2>&lt;img&gt; - Image</h2>
+      <img src="https://via.placeholder.com/150" alt="Sample Image" />
+      <p><code>&lt;img src="..." alt="..."&gt;</code></p>
+    </section>
+
+    <!-- Link Tag -->
+    <section>
+      <h2>&lt;a&gt; - Anchor (Link)</h2>
+      <a href="https://www.google.com" target="_blank">Go to Google</a>
+      <p><code>&lt;a href="url"&gt;link text&lt;/a&gt;</code></p>
+    </section>
+
+    <!-- List Tags -->
+    <section>
+      <h2>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; - Lists</h2>
+      <p><b>Unordered List:</b></p>
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+      </ul>
+      <p><b>Ordered List:</b></p>
+      <ol>
+        <li>First</li>
+        <li>Second</li>
+      </ol>
+    </section>
+
+    <!-- Table -->
+    <section>
+      <h2>&lt;table&gt; - Table</h2>
+      <table border="1" cellpadding="10">
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>25</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Form Elements -->
+    <section>
+      <h2>
+        &lt;form&gt;, &lt;input&gt;, &lt;textarea&gt;, &lt;button&gt;,
+        &lt;select&gt;
+      </h2>
+      <form>
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" /><br /><br />
+
+        <label>Message:</label>
+        <textarea placeholder="Write something..."></textarea><br /><br />
+
+        <label>Choose one:</label>
+        <select>
+          <option>Option 1</option>
+          <option>Option 2</option></select
+        ><br /><br />
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- Media -->
+    <section>
+      <h2>&lt;video&gt; and &lt;audio&gt; - Multimedia</h2>
+      <video width="320" height="240" controls>
+        <source
+          src="https://www.w3schools.com/html/movie.mp4"
+          type="video/mp4"
+        />
+        Video not supported.</video
+      ><br /><br />
+      <audio controls>
+        <source
+          src="https://www.w3schools.com/html/horse.mp3"
+          type="audio/mp3"
+        />
+        Audio not supported.
+      </audio>
+    </section>
+
+    <!-- Div and Span -->
+    <section>
+      <h2>&lt;div&gt; and &lt;span&gt;</h2>
+      <p><b>&lt;div&gt;</b> is a block-level container:</p>
+      <div style="background: #f0f0f0; padding: 10px">This is a div</div>
+
+      <p><b>&lt;span&gt;</b> is an inline container:</p>
+      <p>This is <span style="color: red">red text</span> using span.</p>
+    </section>
+    <h1>Form Elements - Visual Demo</h1>
+
+    <form>
+      <fieldset>
+        <legend>Basic Info</legend>
+
+        <!-- label + input (text) -->
+        <label for="name">Name (input)</label>
+        <input type="text" id="name" placeholder="Enter your name" />
+
+        <!-- label + input (email) -->
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="example@email.com" />
+
+        <!-- label + textarea -->
+        <label for="message">Message (textarea)</label>
+        <textarea
+          id="message"
+          rows="4"
+          placeholder="Type your message"
+        ></textarea>
+
+        <!-- label + select + option -->
+        <label for="country">Country (select + option)</label>
+        <select id="country">
+          <option value="">--Choose--</option>
+          <option value="in">India</option>
+          <option value="us">USA</option>
+          <option value="uk">UK</option>
+        </select>
+
+        <!-- label + datalist -->
+        <label for="browser">Browser (input + datalist)</label>
+        <input
+          list="browsers"
+          id="browser"
+          name="browser"
+          placeholder="Start typing..."
+        />
+        <datalist id="browsers">
+          <option value="Chrome"></option>
+          <option value="Firefox"></option>
+          <option value="Safari"></option>
+          <option value="Edge"></option>
+        </datalist>
+
+        <!-- label + progress -->
+        <label>Progress (progress tag)</label>
+        <progress value="70" max="100">5%</progress>
+
+        <!-- label + meter -->
+        <label>Battery Level (meter tag)</label>
+        <meter min="0" max="100" value="85">85%</meter>
+
+        <!-- output -->
+        <label>Output Tag</label>
+        <output name="result">This is output</output>
+
+        <!-- buttons -->
+        <label>Buttons</label>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button" onclick="alert('Button clicked!')">
+          Click Me
+        </button>
+      </fieldset>
+    </form>
+  </body>
+</html>
