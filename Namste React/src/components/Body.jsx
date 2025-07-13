@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import data from "../../data.json" assert { type: "json" };
+import data from "../../data.json";
 import { useState } from "react";
 export const Body = () => {
   const [lisOfRestaurant, setlistOfRestaurant] = useState(data);

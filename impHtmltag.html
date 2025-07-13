@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Elements Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      input,
+      textarea,
+      select,
+      button,
+      progress,
+      meter {
+        display: block;
+        margin-top: 5px;
+        padding: 8px;
+        width: 300px;
+        max-width: 100%;
+      }
+      fieldset {
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+      legend {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Form Elements - Visual Demo</h1>
+
+    <form>
+      <fieldset>
+        <legend>Basic Info</legend>
+
+        <!-- label + input (text) -->
+        <label for="name">Name (input)</label>
+        <input type="text" id="name" placeholder="Enter your name" />
+
+        <!-- label + input (email) -->
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="example@email.com" />
+
+        <!-- label + textarea -->
+        <label for="message">Message (textarea)</label>
+        <textarea
+          id="message"
+          rows="4"
+          placeholder="Type your message"
+        ></textarea>
+
+        <!-- label + select + option -->
+        <label for="country">Country (select + option)</label>
+        <select id="country">
+          <option value="">--Choose--</option>
+          <option value="in">India</option>
+          <option value="us">USA</option>
+          <option value="uk">UK</option>
+        </select>
+
+        <!-- label + datalist -->
+        <label for="browser">Browser (input + datalist)</label>
+        <input
+          list="browsers"
+          id="browser"
+          name="browser"
+          placeholder="Start typing..."
+        />
+        <datalist id="browsers">
+          <option value="Chrome"></option>
+          <option value="Firefox"></option>
+          <option value="Safari"></option>
+          <option value="Edge"></option>
+        </datalist>
+
+        <!-- label + progress -->
+        <label>Progress (progress tag)</label>
+        <progress value="70" max="100">5%</progress>
+
+        <!-- label + meter -->
+        <label>Battery Level (meter tag)</label>
+        <meter min="0" max="100" value="85">85%</meter>
+
+        <!-- output -->
+        <label>Output Tag</label>
+        <output name="result">This is output</output>
+
+        <!-- buttons -->
+        <label>Buttons</label>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button" onclick="alert('Button clicked!')">
+          Click Me
+        </button>
+      </fieldset>
+    </form>
+  </body>
+</html>
