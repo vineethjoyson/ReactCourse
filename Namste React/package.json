@@ -1,0 +1,24 @@
+{
+  "name": "namste-react",
+  "version": "1.0.0",
+  "description": "Namaste react",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "sonar": "sonar-scanner"
+  },
+  "author": "Vineeth Joyson",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sonarqube-scanner": "^4.3.0"
+  },
+  "browserslist": [
+    "last 2 version"
+  ]
+}

@@ -1,0 +1,89 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  display: flex;
+  /* gap: 10px; */
+  justify-content: space-between;
+  border: 1px solid black;
+  align-items: center;
+  padding: 8px;
+  height: 70px; /* or any fixed/relative height */
+  border-radius: 10px;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  background: rgba(255, 255, 255, 0.082); /* translucent */
+  backdrop-filter: blur(10px); /* blur background behind */
+  border: 5px solid rgba(255, 255, 255, 0.082); /* subtle border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 100%; /* fill the header */
+  /* width: 10%; */
+  display: flex;
+  align-items: center;
+}
+#img {
+  /* width: 200px; */
+  border-radius: 30px;
+  height: 100%;
+  /* width: 20%; */
+}
+.Navitems {
+  font-size: 1em;
+}
+.Navitems > ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.Navitems > ul > li {
+  padding: 5px;
+  margin: 5px;
+}
+
+.RestaurantsCard {
+  width: 200px;
+  height: 400px;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 10px;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  background: rgba(255, 255, 255, 0.1); /* translucent */
+  backdrop-filter: blur(10px); /* blur background behind */
+  border: 5px solid rgba(255, 255, 255, 0.2); /* subtle border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* soft shadow */
+}
+.RestaurantsCard:hover {
+  cursor: pointer;
+  border: 2px solid #000000; /* Change border color and thickness on hover */
+  box-shadow: 0 0 10px #f3e30344; /* Optional: add a glow effect */
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.RestaurantsGrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.search {
+  padding: 10px;
+}
+.RestaurantImg {
+  width: 100%;
+  height: 60%;
+  /* display: block; */
+  /* margin: 0 auto; Center image horizontally if not using flex */
+}
+
+.RestaurantsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  margin: 20px;
+  cursor: pointer;
+}
