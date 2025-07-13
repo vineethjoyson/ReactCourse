@@ -1,0 +1,12 @@
+1. Need Root (ReactDOM.createRoot(//for thiss we will pick the rootvwith document.getElementId()))
+2. We will then root.render(//whetever we need to render here)
+3. Bundler to bundle the code (eg: Webpack, Parcel, vite)
+4. dependency- 2 types 
+(devdependencies//,  --> development  npm i -D <pkg>
+ dependencies)---code  
+5.  ^-carat- "parcel": "^2.15.4" it will install if there is a minor upgrade in version like 2.15.5
+    ~ tilde - "parcel": "~2.15.4" it will install if there is a Major upgrade in version like 3.15.5
+6. Why node module is having too many files evennthough we only installed 1 or 2 dependancies?
+ Because we intall 1 pkg, that package is dependant of another pkg that is again dependant on other. similarly we got all those pkgs in our node module. This is called Transitive dependancy
+7. https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb24%3D   for browsers list who all can access  list of browsers and in which country we need
+8. script in package.json 
