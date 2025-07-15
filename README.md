@@ -20,4 +20,8 @@ food Ordering App
 
   React Hooks(Normal JS functions)
   -useState()-state variable----const [state, setState] = useState(initialValue); for rerendering when the state is changing
-  -useEffect()
+  -useEffect()----whatever we need to call after the render
+
+  Loads---->Render---->Api calls---->render
+
+  shimmer UI---before loading th edata just show a mock ui till we get the data

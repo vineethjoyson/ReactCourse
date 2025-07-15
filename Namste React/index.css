@@ -46,7 +46,8 @@
   margin: 5px;
 }
 
-.RestaurantsCard {
+.RestaurantsCard,
+.shimmer-card {
   width: 200px;
   height: 400px;
   padding: 5px;
@@ -86,4 +87,26 @@
 .filter-btn {
   margin: 20px;
   cursor: pointer;
+}
+
+.Shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.login {
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.082); /* light gray */
+  color: #374151; /* dark gray text */
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
 }
