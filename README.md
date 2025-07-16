@@ -34,3 +34,7 @@ food Ordering App
 
 For Routing
 npm package react-router-dom
+
+we are using clienty side ROuting
+
+Old apprach Serverside Routing

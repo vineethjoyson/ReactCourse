@@ -4,8 +4,8 @@ import Shimmer from "./Shimmer";
 import SearchBar from "./Searchbar";
 export const Body = () => {
   //state cahnge by calling api
-  const [lisOfRestaurant, setlistOfRestaurant] = useState([]);
-  const [filteredRest, setFilteredRest] = useState([]);
+  const [lisOfRestaurant, setlistOfRestaurant] = useState([]); //main data  ---Reference which we wopont alter
+  const [filteredRest, setFilteredRest] = useState([]); // filtered data
   const [searchText, setsearchText] = useState("");
   let apiResp;
   ///use effect tohook to render after the basic rendering and then call api and do all the shit

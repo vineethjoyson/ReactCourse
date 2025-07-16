@@ -1,6 +1,6 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
-
+import { Link } from "react-router-dom"; //link to specific child elements without refreshing the whole page
 const Header = () => {
   const [logButton, setlogButton] = useState("LogIn");
   return (
@@ -10,9 +10,15 @@ const Header = () => {
       </div>
       <div className="Navitems">
         <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact us</li>
+          <li>
+            <Link to={"./"}>Home</Link>
+          </li>
+          <li>
+            <Link to={"./About"}>About us</Link>
+          </li>
+          <li>
+            <Link to={"./Contact"}>Contact us</Link>
+          </li>
           <li>Cart</li>
           <button
             className="login"
