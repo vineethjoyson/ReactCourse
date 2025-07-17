@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import SearchBar from "./Searchbar";
+import { Link } from "react-router-dom";
 export const Body = () => {
   //state cahnge by calling api
   const [lisOfRestaurant, setlistOfRestaurant] = useState([]); //main data  ---Reference which we wopont alter
@@ -75,10 +76,12 @@ export const Body = () => {
       </div>
       <div className="RestaurantsContainer">
         {filteredRest.map((Restaurants) => (
-          <RestaurantCard
+          <Link
             key={Restaurants.info.id}
-            RestaurantData={Restaurants}
-          />
+            to={"/restaurants/" + Restaurants?.info.id} //routing to spectific path for  dynamic routing
+          >
+            <RestaurantCard RestaurantData={Restaurants} />
+          </Link>
         ))}
       </div>
     </div>

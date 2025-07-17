@@ -35,6 +35,16 @@ food Ordering App
 For Routing
 npm package react-router-dom
 
-we are using clienty side ROuting
+we are using client side ROuting
+✅ 1. What is a Single Page Application (SPA)?
+A Single Page Application is a web app that loads a single HTML page once and dynamically updates the content using JavaScript without reloading the entire page.
 
 Old apprach Serverside Routing
+
+Dynamic Routing
+{
+path: "/restaurants/:resId", //Dynamic
+element: <RestaurantMenu />, ------------------>in the root file
+},
+mport { useParams } from "react-router-dom"; //to get the dynamic params
+const { resId } = useParams(); ------------------>getting path param

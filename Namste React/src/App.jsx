@@ -5,6 +5,7 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
+import RestaurantMenu from "./components/RestrauntMenu";
 //Routing
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; //Outlet each time the children changes it will update the Outlet component
 const AppLayout = () => {
@@ -35,6 +36,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />, //config for about page
+      },
+      {
+        path: "/restaurants/:resId", //Dynamic
+        element: <RestaurantMenu />,
       },
     ],
     errorElement: <Error />, //Error Handling
