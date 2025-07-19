@@ -28,9 +28,17 @@ food Ordering App
   [count] When count changes
   [a, b] When a or b changes
 
-  Loads---->Render---->Api calls---->render
+You must use useEffect (or useLayoutEffect) for:
+⭐DOM interaction
+⭐Event listeners
+⭐API calls
+⭐Subscriptions
+⭐Timers
+It ensures side-effects run safely and predictably.
 
-  shimmer UI---before loading th edata just show a mock ui till we get the data
+Loads---->Render---->Api calls---->render
+
+shimmer UI---before loading th edata just show a mock ui till we get the data
 
 For Routing
 npm package react-router-dom

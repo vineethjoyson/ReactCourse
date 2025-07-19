@@ -1,21 +1,10 @@
-import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom"; //to get the dynamic params
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 const RestaurantMenu = () => {
   const { resId } = useParams(); //to get the dynamic params----------------------->>>>>IMP
   console.log(resId);
-  const [resMenu, setResMenu] = useState(null);
-  useEffect(() => {
-    fetchResdata();
-  }, []);
-
-  const fetchResdata = async () => {
-    const data = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=10.51600&lng=76.21570&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
-    );
-    const jsonResp = await data.json();
-    setResMenu(jsonResp.data);
-  };
+  const resMenu = useRestaurantMenu(resId); //custom hook here created acustom utility function just tyo call specified url
   if (resMenu == null) return <Shimmer />; //till its load
   const {
     name,

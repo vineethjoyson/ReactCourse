@@ -1,8 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import SearchBar from "./Searchbar";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 export const Body = () => {
   //state cahnge by calling api
   const [lisOfRestaurant, setlistOfRestaurant] = useState([]); //main data  ---Reference which we wopont alter
@@ -29,6 +29,14 @@ export const Body = () => {
     setFilteredRest(initialLoadData);
   };
 
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you're offline!! Please check your internet connection;
+      </h1>
+    );
   //conditional Rendering
   // Shimmer UI before the api calls and render
   // if (lisOfRestaurant?.length === 0) {
