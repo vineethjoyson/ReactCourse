@@ -6,12 +6,12 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
   const [logButton, setlogButton] = useState("LogIn");
   return (
-    <div className="header">
-      <div className="logo">
+    <div className="flex justify-between items-center px-4 py-6 bg-white shadow-md">
+      <div className="h-1">
         <img id="img" src={LOGO_URL} alt="Logo" />
       </div>
       <div className="Navitems">
-        <ul>
+        <ul className="flex  gap-6">
           <li>Online Status:{onlineStatus ? "🟢" : "🔴"}</li>
           <li>
             <Link to={"./"}>Home</Link>

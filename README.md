@@ -62,11 +62,16 @@ lazy loading, Dynamic bundling
 import React, { lazy, Suspense } from "react"; //lazy and suspence for the lazy loading
 
 , //Wrappping im suspence willl give a fallback by the gtime the other componet is loading what need to be displayed
-      {
-        path: "/grocery", //Dynamic
-        element: (
-          <Suspense fallback={<h1>Loading....</h1>}>
-            <Grocery />
-          </Suspense>
-        ),
-      },
+{
+path: "/grocery", //Dynamic
+element: (
+<Suspense fallback={<h1>Loading....</h1>}>
+<Grocery />
+</Suspense>
+),
+},
+
+Tailwind CSS----> styling
+others used
+material ui
+Saas Sacss, Chakra ui
