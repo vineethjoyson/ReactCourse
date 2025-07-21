@@ -56,3 +56,17 @@ element: <RestaurantMenu />, ------------------>in the root file
 },
 mport { useParams } from "react-router-dom"; //to get the dynamic params
 const { resId } = useParams(); ------------------>getting path param
+
+lazy loading, Dynamic bundling
+//so whats happening here is we are using lazy loading or code splitting. so that when it bundles and render this part of code wont be loaded in a single file. this chunk will be only laoded when the need is there. so the main importyant thing thios makes our apps lighter and more optimised when we are working on big prod heavuy applications
+import React, { lazy, Suspense } from "react"; //lazy and suspence for the lazy loading
+
+, //Wrappping im suspence willl give a fallback by the gtime the other componet is loading what need to be displayed
+      {
+        path: "/grocery", //Dynamic
+        element: (
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
+      },
