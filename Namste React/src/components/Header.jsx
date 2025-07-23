@@ -5,13 +5,19 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   const [logButton, setlogButton] = useState("LogIn");
+  //responsive design;
   return (
-    <div className="flex justify-between items-center px-4 py-6 bg-white shadow-md">
-      <div className="h-1">
-        <img id="img" src={LOGO_URL} alt="Logo" />
+    <div className="flex justify-between items-center px-4 py-3 md:px-8 md:py-4 bg-white shadow-md h-16 md:h-20 lg:h-25 w-full">
+      <div className=" Logo h-full ">
+        <img
+          className="w-full h-full rounded-full"
+          id="img"
+          src={LOGO_URL}
+          alt="Logo"
+        />
       </div>
       <div className="Navitems">
-        <ul className="flex  gap-6">
+        <ul className="flex justify-between items-center gap-2 sm:gap-2 md:gap-4 lg:gap-6 xl:gap-8 text-sm sm:text-base md:text-lg lg:text-lg xl:text-lg [&>li]:hover:text-red-400">
           <li>Online Status:{onlineStatus ? "🟢" : "🔴"}</li>
           <li>
             <Link to={"./"}>Home</Link>

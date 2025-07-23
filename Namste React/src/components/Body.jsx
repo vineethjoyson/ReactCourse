@@ -50,16 +50,17 @@ export const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="SearchBar">
+      <div className="filter flex items-center">
+        <div className="SearchBar py-3 m-3">
           <input
+            className="border "
             type="text"
             value={searchText}
             onChange={(e) => setsearchText(e.target.value)}
             placeholder="eg:cafe"
           />
           <button
-            className="searchButton"
+            className="searchButton px-2 py-1 ml-3  bg-white shadow-xl hover:border hover:border-black-500 p-4 rounded-md"
             onClick={() => {
               setFilteredRest(
                 lisOfRestaurant.filter((res) =>
@@ -72,7 +73,7 @@ export const Body = () => {
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="filter-btn px-2 py-1 ml-3  bg-white shadow-xl hover:border hover:border-black-500 p-4 rounded-md"
           onClick={() => {
             setFilteredRest(
               lisOfRestaurant.filter((x) => x.info.avgRating > 4.5)
@@ -82,7 +83,7 @@ export const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="RestaurantsContainer">
+      <div className="RestaurantsContainer flex flex-wrap hover:">
         {filteredRest.map((Restaurants) => (
           <Link
             key={Restaurants.info.id}

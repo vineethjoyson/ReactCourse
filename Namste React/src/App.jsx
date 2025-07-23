@@ -12,7 +12,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; 
 const Grocery = lazy(() => import("./components/Grocery")); //so whats happening here is we are using lazy loading or code splitting. so that when it bundles and render this part of code wont be loaded in a single file. this chunk will be only laoded when the need is there. so the main importyant thing thios makes our apps lighter and more optimised when we are working on big prod heavuy applications
 const AppLayout = () => {
   return (
-    <div className="app">
+    <div className="app ">
       <Header />
       <Outlet />
     </div>
