@@ -14,4 +14,19 @@ const RestaurantCard = ({ RestaurantData }) => {
     </div>
   );
 };
+
+//higer Order Components
+export const withOpenedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
+          Open
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
 export default RestaurantCard;

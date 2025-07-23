@@ -18,7 +18,7 @@ food Ordering App
 - -Contact
   \*/
 
-  React Hooks(Normal JS functions)
+  <React Hooks>(Normal JS functions)
   -useState()-state variable----const [state, setState] = useState(initialValue); for rerendering when the state is changing
 
   -useEffect()----whatever we need to call after the render
@@ -38,7 +38,7 @@ It ensures side-effects run safely and predictably.
 
 Loads---->Render---->Api calls---->render
 
-shimmer UI---before loading th edata just show a mock ui till we get the data
+<shimmer UI->--before loading th edata just show a mock ui till we get the data
 
 For Routing
 npm package react-router-dom
@@ -49,7 +49,7 @@ A Single Page Application is a web app that loads a single HTML page once and dy
 
 Old apprach Serverside Routing
 
-Dynamic Routing
+<Dynamic Routing>
 {
 path: "/restaurants/:resId", //Dynamic
 element: <RestaurantMenu />, ------------------>in the root file
@@ -57,7 +57,7 @@ element: <RestaurantMenu />, ------------------>in the root file
 mport { useParams } from "react-router-dom"; //to get the dynamic params
 const { resId } = useParams(); ------------------>getting path param
 
-lazy loading, Dynamic bundling
+<lazy loading, Dynamic bundling>
 //so whats happening here is we are using lazy loading or code splitting. so that when it bundles and render this part of code wont be loaded in a single file. this chunk will be only laoded when the need is there. so the main importyant thing thios makes our apps lighter and more optimised when we are working on big prod heavuy applications
 import React, { lazy, Suspense } from "react"; //lazy and suspence for the lazy loading
 
@@ -71,7 +71,10 @@ element: (
 ),
 },
 
-Tailwind CSS----> styling
+<Tailwind CSS>----> styling
 others used
 material ui
 Saas Sacss, Chakra ui
+
+<Higer order components>
+take a componet enhances and return a component  <open> rag is build as an Higer order component

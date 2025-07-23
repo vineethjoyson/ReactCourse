@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -8,7 +8,9 @@ export const Body = () => {
   const [lisOfRestaurant, setlistOfRestaurant] = useState([]); //main data  ---Reference which we wopont alter
   const [filteredRest, setFilteredRest] = useState([]); // filtered data
   const [searchText, setsearchText] = useState("");
+  const RestaurantIsOpen = withOpenedLabel(RestaurantCard); //higher orderComponents
   let apiResp;
+  console.log(lisOfRestaurant);
   ///use effect tohook to render after the basic rendering and then call api and do all the shit
   useEffect(() => {
     fetchData();
@@ -89,7 +91,13 @@ export const Body = () => {
             key={Restaurants.info.id}
             to={"/restaurants/" + Restaurants?.info.id} //routing to spectific path for  dynamic routing
           >
-            <RestaurantCard RestaurantData={Restaurants} />
+            {Restaurants?.info.isOpen ? (
+              <RestaurantIsOpen RestaurantData={Restaurants} /> //HigerOrder component take one componet and enhance it and and return another component
+            ) : (
+              <RestaurantCard RestaurantData={Restaurants} />
+            )}
+
+            {/* <RestaurantCard RestaurantData={Restaurants} /> */}
           </Link>
         ))}
       </div>
