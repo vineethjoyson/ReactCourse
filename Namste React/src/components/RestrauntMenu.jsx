@@ -1,11 +1,13 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom"; //to get the dynamic params
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const { resId } = useParams(); //to get the dynamic params----------------------->>>>>IMP
   console.log(resId);
   const resMenu = useRestaurantMenu(resId); //custom hook here created acustom utility function just tyo call specified url
   if (resMenu == null) return <Shimmer />; //till its load
+  // console.log("resmenu", resMenu);
   const {
     name,
     city,
@@ -14,22 +16,23 @@ const RestaurantMenu = () => {
     cuisines,
     costForTwoMessage,
   } = resMenu?.cards[2]?.card?.card.info;
+  const itemList =
+    resMenu.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (x) =>
+        x?.card?.card?.["@type"] ==
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  console.log("itemLioist", itemList[0]);
   return (
-    <div className="RestaurantCardMenu">
-      <h1>{name}</h1>
-      <h2>{city}</h2>
-      <h2>{costForTwoMessage}</h2>
-      <h2>{cuisines.join(",")}</h2>
-      <h2>{avgRating}</h2>
-      <h2>{totalRatingsString}</h2>
-      <h2>Menu</h2>
-      <ul>
-        {resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards?.map(
-          (x) => (
-            <li key={x.card.info.id}>---{x.card.info.name}</li>
-          )
-        )}
-      </ul>
+    <div className="RestaurantCardMenu w-6/12 mx-auto my-4">
+      <div className="heading text-center font-bold text-xl">
+        <h1>{name}</h1>
+        <h2>{costForTwoMessage}</h2>
+        <h3>{cuisines.join(",")}</h3>
+      </div>
+      {itemList.map((x) => (
+        <RestaurantCategory key={x?.card?.card?.categoryId} itemList={x} />
+      ))}
     </div>
   );
 };

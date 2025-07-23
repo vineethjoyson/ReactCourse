@@ -1,7 +1,11 @@
 import { imgUrlPart } from "../utils/constants";
 const RestaurantCard = ({ RestaurantData }) => {
+  const isOpen = RestaurantData.info.isOpen;
   return (
-    <div className="RestaurantsCard  p-4 m-2 w-52 h-96 bg-gray-200 roun rounded-lg hover:border">
+    <div
+      className={`RestaurantsCard p-4 m-2 w-52 h-96 rounded-lg hover:border bg-gray-200 
+        ${!isOpen ? "grayscale opacity-60  cursor-not-allowed" : ""}`}
+    >
       <img
         className="RestaurantImg rounded-lg h-48 w-full "
         src={imgUrlPart + RestaurantData.info.cloudinaryImageId}

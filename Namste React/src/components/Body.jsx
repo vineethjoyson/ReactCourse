@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 export const Body = () => {
   //state cahnge by calling api
-  const [lisOfRestaurant, setlistOfRestaurant] = useState([]); //main data  ---Reference which we wopont alter
+  const [lisOfRestaurant, setlistOfRestaurant] = useState([]); //main data  ---Reference which we wont alter
   const [filteredRest, setFilteredRest] = useState([]); // filtered data
   const [searchText, setsearchText] = useState("");
   const RestaurantIsOpen = withOpenedLabel(RestaurantCard); //higher orderComponents
   let apiResp;
-  console.log(lisOfRestaurant);
+  // console.log(lisOfRestaurant);
   ///use effect tohook to render after the basic rendering and then call api and do all the shit
   useEffect(() => {
     fetchData();
