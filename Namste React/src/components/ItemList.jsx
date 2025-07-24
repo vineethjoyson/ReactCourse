@@ -1,9 +1,31 @@
+import { hotelMenuImg } from "../utils/constants";
 const ItemList = ({ data }) => {
-  console.log({ data });
   return (
-    <div className="ItemConatiner p-4 bg-gray-100 text-base m-2">
-      <h2>{data?.card?.info?.name}</h2>
-      <h3>{data?.card?.info?.price}</h3>
+    <div className="ItemConatiner p-4 text-left mx-2 border-gray-200 border-t-2 flex justify-between">
+      <div className="w-5/12 p-2">
+        <h2 className="font-bold">{data?.card?.info?.name}</h2>
+        {data?.card?.info?.isVeg == 1 ? <span>🟢</span> : <span>🔴</span>}
+        <h3 className="font-bold">
+          ₹
+          {data?.card?.info?.price / 100 ||
+            data?.card?.info?.defaultPrice / 100}
+          .00
+        </h3>
+        <p>{data?.card?.info?.description}</p>
+      </div>
+      <div className="w-4/12 p-2 rounded-2xl">
+        <div className="absolute m-2 mx-3">
+          <button className="text-green-500 border font-bold bg-white cursor-pointer  hover:bg-green-600  hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out">
+            Add+
+          </button>
+        </div>
+
+        <img
+          className="rounded-2xl"
+          src={hotelMenuImg + data?.card?.info?.imageId}
+          alt=""
+        />
+      </div>
     </div>
   );
 };

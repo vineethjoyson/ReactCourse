@@ -2,8 +2,10 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom"; //to get the dynamic params
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 const RestaurantMenu = () => {
   const { resId } = useParams(); //to get the dynamic params----------------------->>>>>IMP
+  const [showIndex, setShowIndex] = useState(null); //lifting the state so control is on this component
   console.log(resId);
   const resMenu = useRestaurantMenu(resId); //custom hook here created acustom utility function just tyo call specified url
   if (resMenu == null) return <Shimmer />; //till its load
@@ -30,8 +32,13 @@ const RestaurantMenu = () => {
         <h2>{costForTwoMessage}</h2>
         <h3>{cuisines.join(",")}</h3>
       </div>
-      {itemList.map((x) => (
-        <RestaurantCategory key={x?.card?.card?.categoryId} itemList={x} />
+      {itemList.map((x, index) => (
+        <RestaurantCategory
+          key={x?.card?.card?.categoryId}
+          itemList={x}
+          menuListFlag={showIndex == index ? true : false} //lifting the state
+          setShowIndex={() => setShowIndex(showIndex === index ? null : index)} //lifting the state----> this is for only opening one field at a time
+        />
       ))}
     </div>
   );

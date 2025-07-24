@@ -78,3 +78,7 @@ Saas Sacss, Chakra ui
 
 <Higer order components>
 take a componet enhances and return a component  <open> rag is build as an Higer order component
+
+<Accordion>
+Liftinng state up <imp concept>
+lifting the state so control is on parent component
