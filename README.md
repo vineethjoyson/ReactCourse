@@ -100,11 +100,17 @@ element: (
 
 # Redux
 
+- this is not mandatory in react
+- this is an additional library
+- we will use redux toolkit and react-redux pkgs
+- global space
 - Redux slice
 - separate slices for each requirement
 
-# flow
+# Redux flow
 
-- dispatch action-calls a function-This function will modify the slice in the Redux store
+- dispatch action ---> calls a function ---> This function will modify the slice in the Redux store
   ![Redux flow](image.png)
-- this funtion in the flow is called reducer
+- this funtion in the flow is called reducer this function will update the slice of redux store
+- to Read Data-> we will use SELECTOR---> this procedure is called subcribing to the store
+  ![Redux full flow](image-1.png)
