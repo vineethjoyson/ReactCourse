@@ -84,3 +84,10 @@ lifting the state so control is on parent component
 
 <React context> we can managae the the info in a centralized space so all the components can acccess also avoid the pop drilling
 so basically we need a context filee where we create the context info. and we use the useContext hook to access and mainpulate that
+
+<Redux>
+Redux slice
+separate slices for each requirement
+flow
+-dispatch action-calls a function-This function will modify the slice in the Redux store
+![alt text](image.png)
