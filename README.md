@@ -18,10 +18,9 @@ food Ordering App
 - -Contact
   \*/
 
-  <React Hooks>(Normal JS functions)
-  -useState()-state variable----const [state, setState] = useState(initialValue); for rerendering when the state is changing
+  <React Hooks>(Normal JS functions) -<useState>()-state variable----const [state, setState] = useState(initialValue); for rerendering when the state is changing
 
-  -useEffect()----whatever we need to call after the render
+  -<useEffect>()----whatever we need to call after the render
   Dependency Array When Effect Runs
   Not provided After every render
   [] Once after initial render
@@ -82,3 +81,6 @@ take a componet enhances and return a component  <open> rag is build as an Higer
 <Accordion>
 Liftinng state up <imp concept>
 lifting the state so control is on parent component
+
+<React context> we can managae the the info in a centralized space so all the components can acccess also avoid the pop drilling
+so basically we need a context filee where we create the context info. and we use the useContext hook to access and mainpulate that

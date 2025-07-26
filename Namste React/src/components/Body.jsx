@@ -1,14 +1,16 @@
 import RestaurantCard, { withOpenedLabel } from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext"; //context file
 export const Body = () => {
   //state cahnge by calling api
   const [lisOfRestaurant, setlistOfRestaurant] = useState([]); //main data  ---Reference which we wont alter
   const [filteredRest, setFilteredRest] = useState([]); // filtered data
   const [searchText, setsearchText] = useState("");
   const RestaurantIsOpen = withOpenedLabel(RestaurantCard); //higher orderComponents
+  const { loggedInUser, setUserName } = useContext(UserContext); //context file context fetching with the set function for the context which is a state setter function in the top file
   let apiResp;
   // console.log(lisOfRestaurant);
   ///use effect tohook to render after the basic rendering and then call api and do all the shit
@@ -84,6 +86,14 @@ export const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <div className="search m-4 p-4 flex items-center">
+          <label>UserName : </label>
+          <input
+            className="border border-black p-2"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
       <div className="RestaurantsContainer flex flex-wrap hover:">
         {filteredRest.map((Restaurants) => (

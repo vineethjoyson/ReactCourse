@@ -1,10 +1,12 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom"; //link to specific child elements without refreshing the whole page
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext"; //context file
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   const [logButton, setlogButton] = useState("LogIn");
+  const { loggedInUser } = useContext(UserContext); //we are picking the logged in user from the context
   //responsive design;
   return (
     <div className="flex justify-between items-center px-4 py-3 md:px-8 md:py-4 bg-white shadow-md h-16 md:h-20 lg:h-25 w-full">
@@ -40,6 +42,7 @@ const Header = () => {
           >
             {logButton}
           </button>
+          <li className="px-4 ">{loggedInUser}</li>
         </ul>
       </div>
     </div>

@@ -1,6 +1,9 @@
 import { imgUrlPart } from "../utils/constants";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 const RestaurantCard = ({ RestaurantData }) => {
   const isOpen = RestaurantData.info.isOpen;
+  const { loggedInUser } = useContext(UserContext);
   return (
     <div
       className={`RestaurantsCard p-4 m-2 w-52 h-96 rounded-lg hover:border bg-gray-200 
@@ -15,6 +18,7 @@ const RestaurantCard = ({ RestaurantData }) => {
       <h4>{RestaurantData.info.costForTwo}</h4>
       <h4>{RestaurantData.info.avgRating} ⭐</h4>
       <h4>{RestaurantData.info.locality}</h4>
+      <h4>userName: {loggedInUser}</h4>
     </div>
   );
 };
