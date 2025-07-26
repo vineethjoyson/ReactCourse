@@ -68,7 +68,7 @@ element: <RestaurantMenu />, ------------------>in the root file
 - //so whats happening here is we are using lazy loading or code splitting. so that when it bundles and render this part of code wont be loaded in a single file. this chunk will be only laoded when the need is there. so the main importyant thing thios makes our apps lighter and more optimised when we are working on big prod heavuy applications
   - import React, { lazy, Suspense } from "react"; //lazy and suspence for the lazy loading
 
-# , //Wrappping im suspence willl give a fallback by the gtime the other componet is loading what need to be displayed
+# //Wrappping im suspence willl give a fallback by the gtime the other componet is loading what need to be displayed
 
 {
 path: "/grocery", //Dynamic
@@ -114,3 +114,4 @@ element: (
 - this funtion in the flow is called reducer this function will update the slice of redux store
 - to Read Data-> we will use SELECTOR---> this procedure is called subcribing to the store
   ![Redux full flow](image-1.png)
+  ![Redux flow](image-2.png)
