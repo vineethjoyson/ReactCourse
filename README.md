@@ -115,3 +115,73 @@ element: (
 - to Read Data-> we will use SELECTOR---> this procedure is called subcribing to the store
   ![Redux full flow](image-1.png)
   ![Redux flow](image-2.png)
+
+# Redux tool kit
+
+- intall @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to app
+- Create Slice(cart slice for our use case)
+- dispatch( action)
+- Selector for Reading slice date
+
+# React Steps
+
+- store creation
+- import { configureStore } from "@reduxjs/toolkit";
+  import cartReducer from "./cartSlice"; //Redux Store Setup
+
+  const appStore = configureStore({
+  reducer: {
+  cart: cartReducer,
+  },
+  });
+  export default appStore;
+
+- slice Creation
+  import { createSlice, current } from "@reduxjs/toolkit";
+
+const cartSlice = createSlice({
+name: "cart",
+initialState: {
+items: [],
+},
+reducers: {
+addItem: (state, action) => {
+// Redux Toolkit uses immer BTS
+state.items.push(action.payload);
+},
+removeItem: (state, action) => {
+state.items.pop();
+},
+//originalState = {items: ["pizza"]}
+clearCart: (state, action) => {
+//RTK - either Mutate the existing state or return a new State
+// state.items.length = 0; // originalState = []
+
+      return { items: [] }; // this new object will be replaced inside originalState = { items: [] }
+    },
+
+},
+});
+
+export const { addItem, removeItem, clearCart } = cartSlice.actions;
+
+export default cartSlice.reducer;
+
+- For Reading
+
+- import { useSelector } from "react-redux";
+- const cartItems = useSelector((state) => state.cart.items); //subscribe to exactly what you need
+
+- For Updating
+
+mport { useDispatch } from "react-redux"; //redux for dispatching an action
+import { addItem } from "../utils/cartSlice"; //action
+
+const dispatch = useDispatch();
+
+const handleAddItem = (item) => {
+// Dispatch an action
+dispatch(addItem(item));
+};

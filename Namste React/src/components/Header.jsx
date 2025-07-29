@@ -3,10 +3,13 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom"; //link to specific child elements without refreshing the whole page
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext"; //context file
+import { useSelector } from "react-redux"; //for recieveing or reading Redux state we use this we need to sunscribe this
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   const [logButton, setlogButton] = useState("LogIn");
   const { loggedInUser } = useContext(UserContext); //we are picking the logged in user from the context
+  const cartItems = useSelector((state) => state.cart.items);
+  // console.log("cartItems", cartItems);
   //responsive design;
   return (
     <div className="flex justify-between items-center px-4 py-3 md:px-8 md:py-4 bg-white shadow-md h-16 md:h-20 lg:h-25 w-full">
@@ -33,7 +36,9 @@ const Header = () => {
           <li>
             <Link to={"./grocery"}>Grocery</Link>
           </li>
-          <li>Cart</li>
+          <li>
+            <Link to={"./cart"}>Cart🛒({cartItems.length})</Link>
+          </li>
           <button
             className="login"
             onClick={() =>
